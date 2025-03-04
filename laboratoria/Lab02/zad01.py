@@ -40,4 +40,5 @@ def fix_species(s: str) -> str:
     else:
         return s
 
+
 df["variety"] = df["variety"].apply(fix_species)
