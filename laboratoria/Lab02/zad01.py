@@ -1,11 +1,9 @@
 import pandas as pd
 
-df = pd.read_csv("Dane/iris_with_errors.csv")
+df = pd.read_csv("../Dane/iris_with_errors.csv")
 
-# Display a count of missing data.
 print("Initial missing data counts:\n", df.isnull().sum())
 
-# Convert the numeric columns (coercing errors into NaN).
 numeric_columns = ["sepal.length", "sepal.width", "petal.length", "petal.width"]
 for col in numeric_columns:
     df[col] = pd.to_numeric(df[col], errors='coerce')

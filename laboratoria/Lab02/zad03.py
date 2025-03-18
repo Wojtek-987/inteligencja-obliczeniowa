@@ -20,7 +20,6 @@ def print_stats(data, name):
     print("\n")
 
 
-# Original data statistics
 print_stats(df.iloc[:, :2], "Original Data")
 
 
@@ -42,7 +41,6 @@ for col in df.columns[:2]:
 print_stats(df_zscore.iloc[:, :2], "Z-Score Standardized Data")
 
 
-# Create scatter plots for each transformation
 def scatter_plot(data, title, xlabel, ylabel):
     plt.figure(figsize=(8, 6))
     for species in data['Species'].unique():
@@ -57,14 +55,14 @@ def scatter_plot(data, title, xlabel, ylabel):
     plt.show()
 
 
-# 1. Original data plot
+# Original data plot
 scatter_plot(df, "Original Data: Sepal Length vs. Sepal Width",
              "Sepal Length (cm)", "Sepal Width (cm)")
 
-# 2. Min-Max Normalized data plot
+# Min-Max Normalized data plot
 scatter_plot(df_minmax, "Min-Max Normalized Data: Sepal Length vs. Sepal Width",
              "Normalized Sepal Length", "Normalized Sepal Width")
 
-# 3. Z-Score Standardized data plot
+# Z-Score Standardized data plot
 scatter_plot(df_zscore, "Z-Score Standardized Data: Sepal Length vs. Sepal Width",
              "Standardized Sepal Length", "Standardized Sepal Width")
